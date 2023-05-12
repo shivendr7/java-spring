@@ -22,6 +22,7 @@ class StudentdalApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// CREATE
 		Student student = new Student();
 		student.setName("John");
 		student.setCourse("Serverless with AWS lambda");
@@ -31,12 +32,14 @@ class StudentdalApplicationTests {
 
 	@Test
 	void testFindStudentById() {
+		// READ 
 		Student student = repo.findById(1l).get();
 		System.out.println(student);
 	}
 
 	@Test
 	void testUpdateStudent() {
+		// UPDATE
 		Student student = repo.findById(1l).get();
 		student.setFee(40d);
 		repo.save(student);
@@ -44,6 +47,7 @@ class StudentdalApplicationTests {
 
 	@Test
 	void testDeleteStudent() {
+		// DELETE
 		Student student = repo.findById(1l).get();
 		repo.delete(student);
 	}
