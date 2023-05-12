@@ -29,4 +29,24 @@ class StudentdalApplicationTests {
 		repo.save(student);
 	}
 
+	@Test
+	void testFindStudentById() {
+		Student student = repo.findById(1l).get();
+		System.out.println(student);
+	}
+
+	@Test
+	void testUpdateStudent() {
+		Student student = repo.findById(1l).get();
+		student.setFee(40d);
+		repo.save(student);
+	}
+
+	@Test
+	void testDeleteStudent() {
+		Student student = repo.findById(1l).get();
+		repo.delete(student);
+	}
+
+
 }
